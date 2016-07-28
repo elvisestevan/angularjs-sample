@@ -1,0 +1,23 @@
+{
+  "name": "angular-samples",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Elvis Estevan <elvis.estevan65@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "path": "public/lib"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

@@ -1,0 +1,66 @@
+<html ng-app="app">
+  <head>
+    <title>AngularJS Form</title>
+    <meta charset="utf-8" />
+
+    <style>
+      input.ng-invalid.ng-touched {
+        background: red;
+      }
+
+      input.ng-valid.ng-touched {
+        background: green;
+      }
+    </style>
+  </head>
+  <body ng-controller="formController">
+    <form name="form" ng-submit="savePerson(person)">
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" ng-model="person.name" required/>
+        <div ng-show="form.$submitted || form.name.$touched">
+          <div ng-show="form.name.$error.required">
+            Name must be informed
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label>Email:</label>
+        <input type="email" name="email" ng-model="person.email" required/>
+        <div ng-show="form.$submitted || form.email.$touched">
+          <div ng-show="form.email.$error.required">
+            Email must be informed
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label>Gender:</label>
+        <input type="radio" ng-model="person.gender" value="M" /> Male
+        <input type="radio" ng-model="person.gender" value="F" /> Female
+      </div>
+
+      <div>
+        <label>State:</label>
+        <select ng-model="person.state">
+          <option ng-repeat="state in states" value="{{ state }}">{{ state }}</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="submit" value="Save" ng-disabled="form.$invalid" />
+        <input type="button" value="Reset"
+      </div>
+
+      <pre>
+        {{ people | json }}
+      </pre>
+
+    </form>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/formController.js"></script>
+  </body>
+</html>
