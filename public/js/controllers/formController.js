@@ -1,12 +1,12 @@
-app.controller('formController', function ($scope) {
+app.controller('formController', ['$scope', 'Person', function ($scope, Person) {
 
   $scope.people = [];
   $scope.states = ['RS', 'SP', 'RJ', 'SC'];
-  $scope.person = newPerson();
+  $scope.person = new Person();
 
   $scope.savePerson = function (person) {
     $scope.people.push(person);
-    $scope.person = newPerson();
+    $scope.person = new Person();
 
     $scope.form.$setUntouched();
     $scope.form.$setPristine();
@@ -14,7 +14,7 @@ app.controller('formController', function ($scope) {
 
   console.log($scope.person);
 
-})
+}])
 
 function newPerson() {
   return { name: "", email: "", gender: "", state: "RJ" };
