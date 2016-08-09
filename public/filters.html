@@ -1,0 +1,25 @@
+<html ng-app="app">
+  <head>
+    <title>AngularJS Filters</title>
+    <meta charset="utf-8" />
+  </head>
+  <body ng-controller="filtersExampleController">
+
+    <p>
+      Using uppercase filter in 'elvis estevan': {{ person.name | uppercase }}
+    </p>
+
+    <p>
+      Using json filter in person object: {{ person | json }}
+    </p>
+
+    <p>
+      Using greeting filter in person.name object: {{ person.name | greeting }}
+    </p>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/controllers/filtersExampleController.js"></script>
+    <script type="text/javascript" src="/js/filters/exampleFilter.js"></script>
+  </body>
+</html>
