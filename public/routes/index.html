@@ -1,0 +1,26 @@
+<html ng-app="app">
+  <head>
+    <title>AngularJS Operations</title>
+    <meta charset="utf-8" />
+
+    <base href="/routes/" />
+  </head>
+  <body ng-controller="RoutesController">
+
+    <ul>
+      <li>
+        <a href="/routes">Inicio</a>
+        <a href="#/pagina1">Página 1</a>
+        <a href="#/pagina2/1">Página 2</a>
+      </li>
+    </ul>
+
+    <div ng-view>
+
+    </div>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/js/app.routes.js"></script>
+  </body>
+</html>
