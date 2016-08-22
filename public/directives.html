@@ -1,0 +1,49 @@
+<html ng-app="app">
+  <head>
+    <title>AngularJS Operations</title>
+    <meta charset="utf-8" />
+    <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+      }
+    </style>
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+
+  </head>
+  <body ng-controller="directivesController">
+
+    <h1>ngShow e ngHide</h1>
+
+    <input type="checkbox" ng-model="show" />Selected: show = true
+
+    <div ng-show="show">
+      This block is showed when show = true
+    </div>
+
+    <div ng-hide="show">
+      This block is showed when show = false
+    </div>
+
+    <div ng-show="!show">
+      This block is showed when show != true
+    </div>
+
+    <h1>ngBindHtml</h1>
+    <p>
+      {{ welcomeMessage }}
+    </p>
+
+    <p ng-bind-html="welcomeMessage"></p>
+
+    <h1>ngCloak</h1>
+
+    <p ng-cloak>
+      {{ text }}
+    </p>
+
+    {{ text }}
+
+    <script type="text/javascript" src="/lib/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="/js/controllers/directivesController.js"></script>
+  </body>
+</html>
